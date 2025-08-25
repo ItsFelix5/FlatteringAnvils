@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "flatteringanvils",
+  "version": "${version}",
+  "name": "Flattering Anvils",
+  "description": "Anvils that make you flat!",
+  "icon": "assets/flatteringanvils/icon.png",
+  "authors": ["ItsFelix5"],
+  "contact": {
+    "homepage": "https://modrinth.com/mod/FlatteringAnvils",
+    "issues": "https://github.com/ItsFelix5/FlatteringAnvils/issues",
+    "sources": "https://github.com/ItsFelix5/FlatteringAnvils"
+  },
+  "entrypoints": {
+    "main": ["flatteringanvils.Main"]
+  },
+  "license": "MIT",
+  "environment": "*",
+  "mixins": ["flatteringanvils.mixins.json"],
+  "depends": {
+    "fabric": "*"
+  }
+}

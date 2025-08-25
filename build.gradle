@@ -1,0 +1,41 @@
+plugins {
+    id 'fabric-loom' version '1.11-SNAPSHOT'
+}
+
+version = project.version
+group = "io.github.itsfelix5"
+
+base {
+    archivesName = "FlatteringAnvils"
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings "net.fabricmc:yarn:${project.minecraft_version}+build.${project.yarn_mappings}:v2"
+    modImplementation "net.fabricmc:fabric-loader:+"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+}
+
+processResources {
+    inputs.property "version", project.version
+    filteringCharset = "UTF-8"
+
+    filesMatching("fabric.mod.json") {
+        expand "version": project.version
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.encoding = "UTF-8"
+    it.options.release.set(21)
+}
+
+java {
+    if (JavaVersion.current() < JavaVersion.toVersion(21)) toolchain.languageVersion = JavaLanguageVersion.of(21)
+}
+
+jar {
+    from("LICENSE") {
+        rename { "${it}_FlatteringAnvils" }
+    }
+}

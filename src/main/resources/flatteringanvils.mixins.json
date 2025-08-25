@@ -1,0 +1,21 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "flatteringanvils.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "AttributeContainerMixin",
+    "FallingBlockEntityMixin",
+    "LivingEntityMixin"
+  ],
+  "client": [
+    "LivingEntityRendererMixin",
+    "LivingEntityRenderStateMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
